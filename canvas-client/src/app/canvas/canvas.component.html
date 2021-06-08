@@ -1,0 +1,14 @@
+<app-action-bar
+  (onSettingsChange)="onSettingsChange($event)"
+  (onFileChange)="onFileChange($event)"
+  (onClearChange)="clear()"
+></app-action-bar>
+<div>
+  <canvas id="paintCanvas" #paintCanvas width="600" height="400"
+          (mousemove)="findxy('move', $event)"
+          (mousedown)="findxy('down', $event)"
+          (mouseup)="findxy('up', $event)"
+          (mouseout)="findxy('out', $event)"
+  ></canvas>
+</div>
+<app-statisctics [pageSettings]="pageSettings" [mousePos]="mousePos"></app-statisctics>

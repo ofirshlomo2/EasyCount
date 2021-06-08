@@ -1,0 +1,8 @@
+<div id="leftImages">
+  <h3>Server</h3>
+  <button (click)="saveImage()" id="saveImg">Save image</button>
+  <button id="clearAllImgs" (click)="deleteAll()">Delete All</button>
+  <div id="imagesList" *ngIf="images">
+    <img *ngFor="let img of images" [src]="img.src" (click)="onImageCLick.emit(img.src)" alt="">
+  </div>
+</div>

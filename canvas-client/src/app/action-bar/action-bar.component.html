@@ -1,0 +1,19 @@
+<div id="toolbar">
+  <div>
+    <label for="brushSize">Size </label><input (ngModelChange)="modelChanged($event)"
+                                               [(ngModel)]="pageSettings.brushSize" id="brushSize" type="range"
+                                               value="choose brush size" min="1"
+                                               max="20">
+    <label for="brushColor">Color </label><input (ngModelChange)="modelChanged($event)"
+                                                 [(ngModel)]="pageSettings.brushColor" id="brushColor" type="color"
+                                                 value="choose brush color">
+    <label for="bgColor">Background </label><input (ngModelChange)="modelChanged($event)" id="bgColor"
+                                                   [(ngModel)]="pageSettings.bgColor" type="color"
+                                                   value="choose brush color">
+  </div>
+  <div>
+    <label for="fileLoadBtn">Load image </label>
+    <input id="fileLoadBtn" (change)="onfileChanged($event)" type="file" value="load file">
+    <button id="clearBtn" (click)="onClearChange.emit()">Clear</button>
+  </div>
+</div>
